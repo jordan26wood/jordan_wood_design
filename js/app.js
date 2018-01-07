@@ -16,7 +16,7 @@ $(document).foundation();
 
 	var idNum = evt.target.id;
 	console.log("scroll"+idNum)	;
-	TweenLite.to(window, 1, {scrollTo:"#scroll"+idNum, offsetY:-10});
+	TweenLite.to(window, 1, {scrollTo:"#scroll"+idNum, offsetY:-5});
 	}
 
 	for(var s=0; s<links.length; s++){

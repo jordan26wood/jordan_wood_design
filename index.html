@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jordan Wood | Media Designers</title>
+    <title>Jordan Wood | Media Designer</title>
 
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <script src="js/minified/TimelineMax.min.js"></script>
     <script src="js/minified/TweenMax.min.js"></script>
     <script src="js/minified/plugins/ScrollToPlugin.min.js"></script>
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="background">
@@ -41,20 +42,7 @@
   </div>
 
 <h2 class="hide">Social Media</h2>
-<ul id="socialLarge" class="large-2 float-right hide-for-small-only hide-for-medium-only show-for-xlarge-up  columns">
 
-  <li id="instagramLarge">
-    <a href="http://www.instagram.com">
-      <img src="images/instagram_icon.svg" alt="instagram">
-    </a>
-  </li>
-
-  <li id="linkinLarge">
-    <a href="http://www.linkin.com">
-      <img src="images/linkin_icon.svg" alt="instagram">
-    </a>
-  </li>
-</ul>
 </nav>
 
 <div id="videoHeader" >
@@ -110,71 +98,40 @@
 
 <div id="scroll6"></div>
   <section id="portfolio" class="expanded row">
-    <div id="scroll7"></div>
-      <div id="myWork" class="expanded row">
 
-        <div id="port1" class="small-12 medium-6 large-4 columns">
-          <img src="images/port1.jpg" alt="Simple Fitness">
-        </div>
+<!-- Lightbox container -->
+  <section class="lightbox">
+    <div class="small-centered small-12 medium-8 large-6 columns">
+        <i class="fa fa-times fa-2x close-lightbox"></i>
+      <h2 class="title">Simple Fitness</h2>
+    		<img src="images/project_lb1.jpg" alt="Project1" class="lightbox-img">
+    	<p class="lightbox-desc">Placeholder copy</p>
+    </div>
+  </section>
 
-        <div id="port2" class="small-12 medium-6 large-4 columns">
-          <img src="images/port2.jpg" alt="Lord of the Rings">
-        </div>
+  <div id="scroll7"></div>
+    <div id="myWork" class="expanded row">
 
-        <div id="port3" class="small-12 medium-6 large-4 columns">
-          <img src="images/port3.jpg" alt="Jims Design">
-        </div>
+      <div id="port1" class="imgHolder small-12 medium-6 large-4 columns">
+        <img src="images/port1.jpg" alt="Simple Fitness">
+      </div>
 
-        <div id="port4" class="small-12 medium-6 large-4 columns">
-          <img src="images/port4.jpg" alt="Total Beer">
-        </div>
+      <div id="port2" class="imgHolder small-12 medium-6 large-4 columns">
+        <img src="images/port2.jpg" alt="Lord of the Rings">
+      </div>
 
-      <div id="port5" class="small-12 medium-6 large-4 columns">
+      <div id="port3" class="imgHolder small-12 medium-6 large-4 columns">
+        <img src="images/port3.jpg" alt="Jims Design">
+      </div>
+
+      <div id="port4" class="imgHolder small-12 medium-6 large-4 columns">
+        <img src="images/port4.jpg" alt="Total Beer">
+      </div>
+
+      <div id="port5" class="imgHolder small-12 medium-6 large-4 columns">
           <img src="images/port5.jpg" alt="Crunican Orchards">
       </div>
 </div>
-
-<!-- Lightbox container -->
-<section class="lightbox">
-	<i class="fa fa-times close-lightbox"></i>
-    <div class="small-12 small-centered medium-8 large-8 columns">
-         <div class="orbit" role="region" data-orbit data-auto-play="false">
-            <ul class="orbit-container">
-                <li class="is-active orbit-slide">
-                  <img class="orbit-image imgHolder" src="images/project_lb1.jpg" alt="Simple Fitness Photo 1">
-                 </li>
-
-                 <li class="orbit-slide">
-                    <img class="orbit-image imgHolder" src="images/project_lb2.jpg" alt="Simple Fitness Photo 2">
-                  </li>
-
-                   <li class="orbit-slide">
-                      <img class="orbit-image  imgHolder" src="images/project_lb3.jpg" alt="Simple Fitness Photo 3">
-                   </li>
-
-                   <li class="is-active orbit-slide">
-                      <img class="orbit-image  imgHolder" src="images/project_lb4.jpg" alt="Simple Fitness Photo 4">
-                   </li>
-                </ul>
-
-      <nav class="orbit-bullets">
-        <h2 class="hide">Gallery Orbits</h2>
-          <button class="is-active" data-slide="0"><span class="show-for-sr"></span><span class="show-for-sr"></span></button>
-          <button data-slide="1"><span class="show-for-sr"></span></button>
-          <button data-slide="2"><span class="show-for-sr"></span></button>
-          <button data-slide="3"><span class="show-for-sr"></span></button>
-      </nav>
-    </div>
-</div>
-
-  <div class="small-12 small-centered medium-8 large-8 columns">
-    <h2 class="title">Simple Fitness</h2>
-  	<p class="light-desc">Simple Fitness is A cool Site</p>
-    <ul class="subImagesContainer"></ul>
-</div>
-
-  </section>
-</section>
 
 <div id="scroll8"></div>
 <section id="contactMe" class="expanded row">
@@ -183,27 +140,29 @@
       <!-- <h1 class="contact"><span>Contact Me</span></h1> -->
         </div>
 <div class="contactInfo small-12 large-8 large-centered columns">
-  <p>If you like what you see and are looking for a front-end developer or designer, I would love to hear from you so please shoot me a message.  </p>
+  <h2>Get In Touch.</h2>
+  <p>If you like what you see and are looking for a front-end developer or designer, I would love to hear from you.  </p>
 </div>
 
 <div id="contact">
   <p id="contactText"></p>
     <form id="contactForm" action="form.php" method="post">
       <div class="small-10 medium-8 medium-offset-2 large-5 large-offset-3 large-offset-0 large-centered small-offset-1 columns">
-        <label for="name"></label>
-          <input type="text" required id="name" size="30" placeholder="Name">
-          <label for="last"></label>
-          <input type="text" required id="last" size="30" placeholder="Email">
+
+          <input name="name" type="text" required id="name" size="30" placeholder="Name">
+
+            <input class="street" name="street" type="text" required size="30" placeholder="street">
+
+          <input name="email" type="email" required id="email" size="30" placeholder="Email">
         </div>
 
     <div class="messagebox small-10 small-offset-1 medium-8 medium-offset-2 large-5 large-offset-0 large-centered columns">
-        <label for="message"></label>
         <textarea id="message" name="message" placeholder="Message" style="height:94px"></textarea>
     </div>
 
 <div class="expanded row">
       <div class="small-10 small-offset-1 medium-12 medium-centered large-6  columns">
-          <input id="submit"  type="submit" value="Send Message">
+          <input id="submit" name="submit" type="submit" value="Send Message">
       </div>
 </div>
 </form>
