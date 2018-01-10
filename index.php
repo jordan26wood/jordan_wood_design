@@ -1,3 +1,21 @@
+<?php
+require_once("admin/scripts/config.php");
+  if(isset($_POST['submit'])){
+        // echo "Good for you, you can click a button";
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $street = $_POST['street'];
+        $message = $_POST['message'];
+
+        // echo $message;
+        if($street === ""){
+          // echo "Human";
+        $sendMail = submitMessage($name, $email, $message);
+        }
+  }
+
+?>
+
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -30,22 +48,20 @@
 
     <div id="main-menu" class="small-12 medium-8 large-8 end  columns">
       <ul id="mainNav">
-        <li><a href="" id="5">Home</a></li>
-        <li><a href="" id="6">About</a></li>
+        <li><a href="" id="5">About</a></li>
+        <li><a href="" id="6">Resume</a></li>
         <li><a href="" id="7">Portfolio</a></li>
         <li><a href="" id="8">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-<div id="scroll5"></div>
   <div id="videoHeader" >
     <img src="images/jordan_laptop.jpg" id="heroImage" alt="header">
   </div>
 </header>
 
-
-<div id="scroll6"></div>
+<div id="scroll5"></div>
 <h2 class="hide">About Page</h2>
 <section id="aboutPage" class="expanded row">
 
@@ -85,6 +101,7 @@
 </section>
 
 
+<div id="scroll6"></div>
   <section id="portfolio" class="expanded row">
 <!-- Lightbox container -->
     <section class="lightbox">
@@ -126,6 +143,14 @@
         </div>
       </div>
     </form>
+
+<div class="small-12 medium-10 large-8 small-centered columns">
+<h3 id="thankYou"><?php
+if (!empty($sendMail)){
+echo $sendMail;
+}
+?></h3>
+</div>
   </div>
 </section>
 
@@ -139,7 +164,7 @@
 <ul id="socialSmall">
 
     <li id="linkinSmall">
-        <a href="https://www.linkedin.com/in/jordan-wood-0649b6136/">
+        <a href="http://www.linkin.com">
             <img src="images/linkin_icon.svg" alt="instagram">
         </a>
     </li>
