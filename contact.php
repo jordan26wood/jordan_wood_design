@@ -7,13 +7,12 @@ require_once("admin/scripts/config.php");
         $email = $_POST['email'];
         $street = $_POST['street'];
         $message = $_POST['message'];
-        $direct = "thankyou.php";
+
         // echo $message;
         if($street === ""){
           // echo "Human";
-            $sendMail = submitMessage($name, $email, $message, $direct);
+            $sendMail = submitMessage($name, $email, $message);
         }
-
   }
 
 ?>

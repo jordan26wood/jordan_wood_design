@@ -1,38 +1,67 @@
 (function(){
- var ports = document.querySelectorAll('.imgHolder'),
- appliedClass;
+ var ports = document.querySelectorAll('.imgHolder');
 
+function callThumbnails(){
+  const url = './admin/includes/functions.php?getImages=true';
 
-ports.forEach(function(element, index){
-element. addEventListener('click', lightboxOpen, false)
+  fetch(url)
+  .then((resp) => resp.json())
+  .then((data) => {displayThumbnails(data); })
+  .catch(function(error){
+    console.log(error);
+});}
+
+function displayThumbnails(data){
+  let workThumbs = document.querySelector("#myWork");
+  data.forEach(thumb => {
+  let showOn =
+  `<div id="${thumb.images_projects}" class="imgHolder small-12 medium-6 large-4 columns"> <img src="./images/${thumb.images_link}" alt="Projects"></div>`
+
+  workThumbs.innerHTML += showOn;
+  let ports = document.querySelectorAll(".imgHolder");
+
+  ports.forEach(function(element, index){
+  element. addEventListener('click', lightboxOpen, false)
 });
+});
+}
 
-function lightboxOpen(currentIndex, currentObject) {
-   //debugger;
-   let lightbox = document.querySelector('.lightbox');
-   lightbox.style.display = "block";
+function lightboxOpen() {
+  const url = './admin/includes/functions.php?portContent=' + this.id;
 
-   //let lightbox = document.querySelector('.lightbox');
-   let lightboxImg = lightbox.querySelector('img');
-   let title = lightbox.querySelector('h2')
-   let lightboxDesc = lightbox.querySelector('p');
-   let lightboxClose = lightbox.querySelector('.close-lightbox');
+  fetch(url)
+  .then((resp) => resp.json())
+  .then((data) => {contentFill(data); })
+  .catch(function(error){
+    console.log(error);
 
+});}
+
+function contentFill(data){
+const {images_link, images_title, images_sub, images_desc} = data;
+var lightBox = document.querySelector('.lightbox');
+var title = document.querySelector('.title');
+var subTitle = document.querySelector('.sub');
+var lightboxImg = document.querySelector('.lightbox-img');
+var lightboxDesc = document.querySelector('.lightbox-desc');
+var lightboxClose = document.querySelector('.close-lightbox');
+
+   lightBox.style.display = "block";
    lightboxClose.addEventListener('click', closelightbox ,false);
 
-   lightboxImg.src = "images/" + currentObject.images[currentIndex];
-   lightboxDesc.innerHTML = currentObject.ImageDescription[currentIndex];
 
+   var name = document.querySelector('.title').textContent = images_title;
+   var sub = document.querySelector('.sub').textContent = images_sub;
+   var image = document.querySelector('.lightbox-img').src = "images/" + images_link;
+   var desc = document.querySelector('.lightbox-desc').textContent = images_desc;
  }
 
 function closelightbox(){
   let lightbox = document.querySelector('.lightbox');
 		lightbox.style.display = "none";
 		document.body.style.overflow = "visible";
-
-
- lightbox.style.display = "none";
-
-
+    lightbox.style.display = "none";
 }
+
+callThumbnails();
 })();
